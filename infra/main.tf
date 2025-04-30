@@ -1,21 +1,11 @@
-terraform {
-  required_providers {
-    aws = {
-      source = "hashicorp/aws"
-      version = "5.96.0"
-    }
-  }
+module "azurerm_resource_group" {
+  source = "./modules/rg"
 }
 
-provider "aws" {
-    region =   var.region
+module "azurerm_kubernetes_cluster" {
+  source = "./modules/KubernetesCluster"
+  identity_type = var.identity_type
+  
 }
-resource "aws_vpc" "main" {
-  cidr_block       = "10.0.0.0/16"
-  enable_dns_support   = true
-  enable_dns_hostnames = true
 
-  tags = {
-    Name = "devops-vpc"
-  }
-}
+

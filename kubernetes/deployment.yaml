@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: java-web-app
+  labels:
+    app: java-web-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: java-web-app
+  template:
+    metadata:
+      labels:
+        app: java-web-app
+    spec:
+      containers:
+      - name: java-web-app
+        image: madnan08/java-web-app
+        ports:
+        - containerPort: 8080
