@@ -3,6 +3,6 @@ variable "location" {
 }
 
 variable "identity_type" {
-    default = SystemAssigned
+    default = "SystemAssigned"
   
 }

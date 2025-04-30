@@ -2,6 +2,11 @@ variable "azurerm_kubernetes_cluster_name" {
     default =   "akscluster"
 }
 
+variable "location" {  
+}
+
+variable "resource_group_name" {  
+}
 variable "dns_prefix" {
     default = "akscluster"
 }
